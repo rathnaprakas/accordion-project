@@ -1,23 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
+import Question from "./question";
+import questions from "./data";
 
-function App() {
+import './index.css';
+
+let App=()=> {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <h3>Questions</h3>
+      <div className="info">
+      {questions.map(i=><Question title={i.title} info={i.info}/>)}
+      </div>
     </div>
   );
 }
